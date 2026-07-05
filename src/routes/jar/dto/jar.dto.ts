@@ -39,7 +39,7 @@ export default class JarDto {
     type: JarType;
 
     @IsString()
-    @Matches(/^\d{1,2}(?:\.\d{1,2}){2,3}$/, {
+    @Matches(/^\d{1,2}(?:\.\d{1,2}){1,3}$/, {
         groups: ['version'],
     })
     @IsNotEmpty()

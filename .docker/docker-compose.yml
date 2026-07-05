@@ -11,6 +11,7 @@ services:
             - ../.env
         volumes:
             - ..:/home/node/app
+            - ${JARS_MOUNT}:/home/node/downloads
 
     mcjars_db:
         container_name: mcjars_db
