@@ -1,15 +1,13 @@
-import { Injectable } from "@nestjs/common";
-
-import Job from "./job";
-import ScraperService from "src/scraper/scraper.service";
+import { Injectable } from '@nestjs/common';
+import Job from './job';
+import ScraperService from 'src/scraper/scraper.service';
 
 @Injectable()
-export default class ScrapeJarsJob extends Job
-{
+export default class ScrapeJarsJob extends Job {
     constructor(
-        protected ScrapeService: ScraperService
+        protected ScrapeService: ScraperService,
     ) {
-        super("3 0 * * *");
+        super('3 0 * * *');
     }
 
     public onTick() {

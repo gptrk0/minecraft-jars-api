@@ -2,7 +2,7 @@
 /node_modules
 /dist
 /downloads
-package-lock.json
+/jars
 
 # OS
 .DS_Store

@@ -1,14 +1,15 @@
-import { Module } from "@nestjs/common";
+import { Module } from '@nestjs/common';
 
-import JarService from "./jar.service";
-import JarController from "./jar.controller";
+import JarService from './jar.service';
+import JarController from './jar.controller';
 
 @Module({
     providers: [
-        JarService
+        JarService,
     ],
     controllers: [
-        JarController
-    ]
+        JarController,
+    ],
 })
-export default class JarModule { }
+export default class JarModule {
+}

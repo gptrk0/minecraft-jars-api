@@ -1,29 +1,26 @@
-version: "3.8"
-
 services:
-  mcjars_app:
-    container_name: mcjars_app
-    build:
-      context: ../
-      dockerfile: .docker/Dockerfile
-    stop_signal: SIGKILL
-    ports:
-      - ${APP_PORT}:80
-      - 5555:5555
-    env_file:
-      - ../.env
-    volumes:
-      - ..:/home/node/app
+    mcjars_app:
+        container_name: mcjars_app
+        build:
+            context: ../
+            dockerfile: .docker/Dockerfile
+        stop_signal: SIGKILL
+        ports:
+            - ${APP_IP}:${APP_PORT}:80
+        env_file:
+            - ../.env
+        volumes:
+            - ..:/home/node/app
 
-  mcjars_db:
-    container_name: mcjars_db
-    image: postgres:latest
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASS}
-      POSTGRES_DB: ${POSTGRES_DB}
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
+    mcjars_db:
+        container_name: mcjars_db
+        image: postgres:18-alpine
+        environment:
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASS}
+            POSTGRES_DB: ${POSTGRES_DB}
+        volumes:
+            - postgres-data:/var/lib/postgresql
 
 volumes:
-  postgres-data:
+    postgres-data:

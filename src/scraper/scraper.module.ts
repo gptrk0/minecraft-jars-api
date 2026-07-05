@@ -1,14 +1,15 @@
-import { Global, Module } from "@nestjs/common";
+import { Global, Module } from '@nestjs/common';
 
-import ScraperService from "./scraper.service";
+import ScraperService from './scraper.service';
 
 @Global()
 @Module({
     providers: [
-        ScraperService
+        ScraperService,
     ],
     exports: [
-        ScraperService
-    ]
+        ScraperService,
+    ],
 })
-export default class ScraperModule { }
+export default class ScraperModule {
+}

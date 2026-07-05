@@ -1,30 +1,26 @@
-import { CronJob } from "cron";
+import { CronJob } from 'cron';
 
-export default abstract class Job
-{
+export default abstract class Job {
     constructor(
-        public time: string = "* * * * *",
-        public runOnInit: boolean = false
-    )
-    {
+        public time: string = '* * * * *',
+        public runOnInit: boolean = false,
+    ) {
         new CronJob(
-            this.time, 
+            this.time,
             this.onTick,
             this.onComplete,
             true,
             null,
             this,
-            this.runOnInit
+            this.runOnInit,
         );
     }
 
-    public onTick()
-    {
+    public onTick() {
         // 
     }
 
-    public onComplete()
-    {
+    public onComplete() {
         // 
     }
 }

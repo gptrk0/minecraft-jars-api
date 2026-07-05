@@ -1,10 +1,11 @@
-import { Module } from "@nestjs/common";
+import { Module } from '@nestjs/common';
 
-import StatusController from "./status.controller";
+import StatusController from './status.controller';
 
 @Module({
     controllers: [
-        StatusController
-    ]
+        StatusController,
+    ],
 })
-export default class StatusModule { }
+export default class StatusModule {
+}

@@ -1,6 +1,6 @@
-import JarDto, { JarType } from "src/routes/jar/dto/jar.dto";
-import DownloadHandler from "../handlers/download.handler";
-import SpigotHandler from "../handlers/spigot.handler";
+import JarDto, { JarType } from 'src/routes/jar/dto/jar.dto';
+import DownloadHandler from '../handlers/download.handler';
+import SpigotHandler from '../handlers/spigot.handler';
 
 export type ScraperResult = {
     dto: JarDto,
@@ -9,12 +9,10 @@ export type ScraperResult = {
     javaExecutablePath?: string
 };
 
-export default abstract class Scraper
-{
+export default abstract class Scraper {
     public PROJECT_NAME: JarType;
-    
-    constructor()
-    {
+
+    constructor() {
         // 
     }
 
